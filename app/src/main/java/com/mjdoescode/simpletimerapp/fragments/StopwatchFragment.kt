@@ -58,7 +58,6 @@ class StopwatchFragment : Fragment() {
         appDao = appDatabase.appDao()
         adapter = TimerAdapter(ArrayList())
 
-
         // Call delete here to clear database before user initiates new timers
         deleteTimeStamps()
 
@@ -66,6 +65,7 @@ class StopwatchFragment : Fragment() {
         setupSecondaryTimer()
 
         setupClickListeners()
+        binding.timeStamp.isClickable = false
     }
 
     private fun setupMainTimer() {
@@ -101,7 +101,9 @@ class StopwatchFragment : Fragment() {
 
     private fun setupClickListeners() {
         binding.timerControls.setOnClickListener { timerControls() }
-
+        if (!isMainRunning){
+            binding.timeStamp.isClickable = false
+        }
         binding.timeStamp.setOnClickListener {
             getTimeStamp()
             setTimeStamp()

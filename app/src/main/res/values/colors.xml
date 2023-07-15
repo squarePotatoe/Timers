@@ -12,7 +12,7 @@
     <color name="app_background_color">#FFFFFF</color>
     <color name="app_text_color">#3e3e3e</color>
     <color name="timer_controls">#151515</color>
-    <color name="timer_controls_disabled">#463E1E1E</color>
+    <color name="timer_controls_disabled">#467C7777</color>
     <color name="stamp_circle_bg">#8A8686</color>
     <color name="card_background_color">#00000000</color>
     <color name="recycler_background_color">#FFFFFF</color>

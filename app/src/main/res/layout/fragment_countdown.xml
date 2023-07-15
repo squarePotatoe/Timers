@@ -157,7 +157,6 @@
             android:layout_width="@dimen/primary_controls_size"
             android:layout_height="@dimen/primary_controls_size"
             android:layout_marginBottom="@dimen/primary_controls_margin_bottom"
-            android:clickable="false"
             android:contentDescription="@string/timer_play_pause_button"
             android:src="@drawable/image_play_disabled"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -60,10 +60,9 @@ class CountdownFragment : Fragment(), NumberPickerHelper.ViewToUpdate {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupPickers()
-
         mediaPlayer = MediaPlayer.create(requireContext(), R.raw.alarm_ring)
-
         setupClickListeners()
+        disableControls()
     }
 
     private fun setupClickListeners() {
@@ -117,14 +116,13 @@ class CountdownFragment : Fragment(), NumberPickerHelper.ViewToUpdate {
         // to know whether to only change the controls resource or call disableControls
         // When the timer runs out, isTimerSet becomes false, thus calling resetTimer()
         // disables the controls, rather than just changing the value or resources
-        if (!isTimeSet){
+        if (!isTimeSet) {
             disableControls()
         }
         isTimeSet = false
     }
 
     private fun timerControls() {
-
         // To not reset the timer every time the play/pause is clicked,
         // because setupTime() function gets invoked again.
         // Get the total time, that user already set and save it in remainingTime
@@ -164,12 +162,13 @@ class CountdownFragment : Fragment(), NumberPickerHelper.ViewToUpdate {
         // After the timer had ran out, in which case we would want to disableControls
         // Otherwise if there is still time,
         // The play button just needs to change resource and stay clickable to resume
-        if (isTimeSet){
+        if (isTimeSet) {
             binding.timerControls.setImageResource(R.drawable.image_play)
         }
     }
 
     private fun setupTime(): Long {
+        isTimeSet = true
         // Convert the number picker values to milliseconds
         // Add them up to one total value and pass it on to MyCountdown timer
         hours = (hourPicker.value * 3_600_000).toLong()
@@ -250,4 +249,5 @@ class CountdownFragment : Fragment(), NumberPickerHelper.ViewToUpdate {
             binding.timerControls.setImageResource(R.drawable.image_play)
         }
     }
+
 }
