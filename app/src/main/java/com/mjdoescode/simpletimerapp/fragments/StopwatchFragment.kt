@@ -244,4 +244,8 @@ class StopwatchFragment : Fragment() {
         }
     }
 
+    override fun onPause() {
+        super.onPause()
+        stopTimer()
+    }
 }
