@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fragment_margin_startEnd">24dp</dimen>
+    <dimen name="timer_text_size">32sp</dimen>
+    <dimen name="fragment_frame_height">175dp</dimen>
+    <dimen name="constraint_margin_top">48dp</dimen>
+    <dimen name="hint_text_size">16sp</dimen>
+    <dimen name="secondary_controls_size">55dp</dimen>
+    <dimen name="primary_controls_size">75dp</dimen>
+    <dimen name="primary_controls_margin_bottom">60dp</dimen>
+    <dimen name="stopwatch_margin_top">68dp</dimen>
+    <dimen name="secondary_timer_size">20sp</dimen>
+    <dimen name="recycler_card_corner_radius">25dp</dimen>
+    <dimen name="recycler_card_height">230dp</dimen>
+    <dimen name="card_elevation">0dp</dimen>
+</resources>

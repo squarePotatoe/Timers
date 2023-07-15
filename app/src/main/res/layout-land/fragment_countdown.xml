@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/timer_frame"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fragment_frame_height"
+            android:layout_marginStart="@dimen/fragment_margin_startEnd"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/timer_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/reset_timer_text"
+                android:textSize="@dimen/timer_text_size" />
+
+        </FrameLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linear_layout_controls"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_pickers"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/fragment_margin_startEnd"
+            android:layout_marginEnd="@dimen/fragment_margin_startEnd"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <NumberPicker
+                android:id="@+id/picker_hours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants"
+                app:layout_constraintBottom_toBottomOf="@id/picker_minutes"
+                app:layout_constraintEnd_toStartOf="@id/picker_minutes"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/picker_minutes" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/number_picker_separation"
+                android:textSize="@dimen/timer_text_size"
+                app:layout_constraintBottom_toBottomOf="@id/picker_hours"
+                app:layout_constraintEnd_toStartOf="@id/picker_minutes"
+                app:layout_constraintStart_toEndOf="@id/picker_hours"
+                app:layout_constraintTop_toTopOf="@id/picker_hours" />
+
+            <NumberPicker
+                android:id="@+id/picker_minutes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:descendantFocusability="blocksDescendants"
+                app:layout_constraintEnd_toStartOf="@id/picker_seconds"
+                app:layout_constraintStart_toEndOf="@id/picker_hours"
+                app:layout_constraintTop_toTopOf="@id/picker_hours" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:text="@string/number_picker_separation"
+                android:textSize="@dimen/timer_text_size"
+                app:layout_constraintBottom_toBottomOf="@id/picker_minutes"
+                app:layout_constraintEnd_toStartOf="@id/picker_seconds"
+                app:layout_constraintStart_toEndOf="@id/picker_minutes"
+                app:layout_constraintTop_toTopOf="@id/picker_minutes" />
+
+            <NumberPicker
+                android:id="@+id/picker_seconds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:descendantFocusability="blocksDescendants"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/picker_minutes"
+                app:layout_constraintTop_toTopOf="@id/picker_minutes" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/hours_hint"
+                android:textSize="@dimen/hint_text_size"
+                app:layout_constraintEnd_toEndOf="@id/picker_hours"
+                app:layout_constraintStart_toStartOf="@id/picker_hours"
+                app:layout_constraintTop_toBottomOf="@id/picker_hours" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/minutes_hint"
+                android:textSize="@dimen/hint_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/picker_minutes"
+                app:layout_constraintStart_toStartOf="@id/picker_minutes"
+                app:layout_constraintTop_toBottomOf="@id/picker_minutes" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/seconds_hint"
+                android:textSize="@dimen/hint_text_size"
+                app:layout_constraintEnd_toEndOf="@id/picker_seconds"
+                app:layout_constraintStart_toStartOf="@id/picker_seconds"
+                app:layout_constraintTop_toBottomOf="@id/picker_seconds" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            app:layout_constraintTop_toBottomOf="@id/layout_pickers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/timer_reset"
+            android:layout_width="@dimen/secondary_controls_size"
+            android:layout_height="@dimen/secondary_controls_size"
+            android:clickable="false"
+            android:contentDescription="@string/reset_timer_button"
+            android:src="@drawable/timer_reset_disabled"
+            app:layout_constraintBottom_toBottomOf="@+id/timer_controls"
+            app:layout_constraintEnd_toStartOf="@id/timer_controls"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/timer_controls"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/timer_controls"
+            android:layout_width="@dimen/primary_controls_size"
+            android:layout_height="@dimen/primary_controls_size"
+            android:clickable="false"
+            android:contentDescription="@string/timer_play_pause_button"
+            android:src="@drawable/image_play_disabled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/alarm"
+            android:layout_width="@dimen/secondary_controls_size"
+            android:layout_height="@dimen/secondary_controls_size"
+            app:layout_constraintBottom_toBottomOf="@id/timer_controls"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/timer_controls"
+            app:layout_constraintTop_toTopOf="@id/timer_controls">
+
+            <ImageView
+                android:id="@+id/alarm_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/toggle_alarm_button"
+                android:src="@drawable/alarm_off" />
+        </FrameLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
