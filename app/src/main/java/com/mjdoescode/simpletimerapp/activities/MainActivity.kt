@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.countDown -> viewPager.setCurrentItem(0, true)
                 R.id.stopWatch -> viewPager.setCurrentItem(1, true)
+                R.id.exerciseTimer -> viewPager.setCurrentItem(2, true)
             }
             true
         }

@@ -8,4 +8,8 @@
         android:icon="@drawable/selector_stopwatch"
         android:title="Stopwatch"/>
 
+    <item android:id="@+id/exerciseTimer"
+        android:icon="@drawable/selector_stopwatch"
+        android:title="Exercise timer"/>
+
 </menu>
