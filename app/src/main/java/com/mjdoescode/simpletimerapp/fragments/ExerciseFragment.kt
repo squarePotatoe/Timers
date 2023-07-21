@@ -60,16 +60,14 @@ class ExerciseFragment: Fragment() {
 
                 if (seconds <= 0){
                     mediaPlayer?.start()
-                    mediaPlayer?.isLooping = false
                 }
 
                 binding.mainTimer.text = String.format("%02d", seconds)
             }
 
             override fun onFinish() {
+                mediaPlayer?.stop()
                 exerciseTime = 45L
-                binding.secondaryTimer.text = String.format("%02d", exerciseTime)
-
                 isExercise = false
                 isRest = true
                 secondaryTimer.start()
@@ -86,15 +84,14 @@ class ExerciseFragment: Fragment() {
 
                 if (seconds <= 0){
                     mediaPlayer?.start()
-                    mediaPlayer?.isLooping = false
                 }
 
                 binding.secondaryTimer.text = String.format("%02d", seconds)
             }
 
             override fun onFinish() {
+                mediaPlayer?.stop()
                 restTime = 10L
-                binding.mainTimer.text = String.format("%02d", restTime)
                 isExercise = true
                 isExercise = false
                 mainTimer.start()
