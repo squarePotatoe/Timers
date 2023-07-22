@@ -8,7 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     //Custom
-    <color name="selected_blue">#2AA3BF</color>
+    <color name="enabled_blue">#2AA3BF</color>
     <color name="app_background_color">#FFFFFF</color>
     <color name="app_text_color">#3e3e3e</color>
     <color name="timer_controls">#151515</color>
