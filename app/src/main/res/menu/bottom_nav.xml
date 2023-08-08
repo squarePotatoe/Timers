@@ -2,14 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/countDown"
         android:icon="@drawable/selector_countdown"
-        android:title="Countdown"/>
+        android:title="@string/countdown"/>
 
     <item android:id="@+id/stopWatch"
         android:icon="@drawable/selector_stopwatch"
-        android:title="Stopwatch"/>
-
-    <item android:id="@+id/exerciseTimer"
-        android:icon="@drawable/selector_stopwatch"
-        android:title="Exercise timer"/>
+        android:title="@string/stopwatch"/>
 
 </menu>

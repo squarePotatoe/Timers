@@ -2,6 +2,7 @@ package com.mjdoescode.simpletimerapp.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.viewpager2.widget.ViewPager2
 import com.mjdoescode.simpletimerapp.R
 import com.mjdoescode.simpletimerapp.adapters.FragmentAdapter
@@ -14,6 +15,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
         setupUI()
     }
@@ -36,7 +39,6 @@ class MainActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.countDown -> viewPager.setCurrentItem(0, true)
                 R.id.stopWatch -> viewPager.setCurrentItem(1, true)
-                R.id.exerciseTimer -> viewPager.setCurrentItem(2, true)
             }
             true
         }

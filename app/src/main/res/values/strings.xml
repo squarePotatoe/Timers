@@ -11,4 +11,8 @@
     <string name="toggle_alarm_button">Toggle alarm button</string>
     <string name="stopwatch_reset_button">Stopwatch reset button</string>
     <string name="stopwatch_timestamp_button">Stopwatch timestamp button</string>
+    <string name="stopwatch">Stopwatch</string>
+    <string name="countdown">Countdown</string>
+    <string name="_00">00</string>
+    <string name="exercise_time">Exercise time</string>
 </resources>
